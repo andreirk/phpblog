@@ -48,6 +48,12 @@
                     }
                 }
 
+                class Index extends Page
+                {
+                    public $header;
+
+                }
+
                 $index = new Page();
                 $index->header = 'Index';
                 echo $index->header;
