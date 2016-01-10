@@ -59,6 +59,8 @@
                 @$view->header .= 'View';
                 echo '<br>'.$view->header;
                 echo '<br>';
+                $about = new Page();
+                echo $about->header;
                 ?>
 
             </p>
