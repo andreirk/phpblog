@@ -8,13 +8,13 @@ namespace phpblog;
  */
 
 
-    class Page
+class Page
     {
         // properties of the class
         public $text;
         public $header = 'HEADER';
-        public $content;
-        public $footer;
+        public $content = 'DEFAULT CONTENT';
+        public $footer = 'FOOTER';
 
         function __construct($head = 'HEADER', $text = '', $bottom = '')
         {
@@ -45,18 +45,24 @@ namespace phpblog;
             echo 'Вызов метода класса Page хедер = '.$this->header.'<br>';
         }
 
-        public function view_content(){
-            echo $this->content.'<br>';
+        public function view_content($text,$template_name){
+            $text = $text;
+            ob_start();
+            include $template_name.'.php';
+            return ob_get_clean();
         }
 
         public function view_footer(){
             echo $this->footer.'<br>';
         }
-        public function get_Body(){
+
+        public function get_body($text,$template_name){
+
             $this->view_header();
-            $this->view_content();
+            $this->view_content($text, $template_name);
             $this->view_footer();
         }
+
         public function foo()
         {
             return $this->view_header();

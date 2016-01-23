@@ -48,17 +48,21 @@
                     }
                 }
 
-                $index = new Page();
+                $index = new Page('Header for Index', 'Content for Index', 'Footer for Index');
                 $index->header = 'Index';
                 echo $index->header;
+                $index->view_header();
+                // $index->view_the_Page();
 
-                $admin = new Page();
-                $admin->header = 'Admin';
+                $admin = new Page('Header for Admin', 'Content for Admin', 'Footer for Admin');
+
                 echo '<br>'.$admin->header;
-                $view = new Page();
-                @$view->header .= 'View';
-                echo '<br>'.$view->header;
+                $admin->foo();
+                $view = new Page('Header for Content', 'Content for Content', 'Footer for Content');
+                //   echo '<br>'.$view->view_the_Page();
                 echo '<br>';
+                $about = new Page('Header for About', 'Content for About', 'Footer for About');
+                //   echo '<br> page about is '. $about->view_the_Page();
                 ?>
 
             </p>

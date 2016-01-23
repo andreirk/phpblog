@@ -2,4 +2,4 @@
     define('HOST','localhost');
     define('USER','root');
     define('PASS','');
-    define('DB_NAME','phpblog_db');
+    define('DB_NAME','blog_posts');
